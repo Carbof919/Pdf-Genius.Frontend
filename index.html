@@ -1,4 +1,5 @@
-echo '<!DOCTYPE html>
+cat > index.html << 'EOL'
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,4 +10,5 @@ echo '<!DOCTYPE html>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
-</html>' > index.html
+</html>
+EOL
