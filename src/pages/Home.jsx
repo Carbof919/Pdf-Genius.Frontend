@@ -1,11 +1,18 @@
-import Navbar from '../components/Navbar';
-import Workspace from '../components/Workspace';
+cat > src/pages/Home.jsx << 'EOF'
+import { motion } from 'framer-motion'
+import Navbar from '../components/Navbar'
+import Workspace from '../components/Workspace'
 
-export default function Home() {
+export default function Home({ darkMode, toggleDarkMode }) {
   return (
-    <div className="h-screen flex flex-col bg-gray-900">
-      <Navbar />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="flex flex-col h-screen"
+    >
+      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Workspace />
-    </div>
-  );
+    </motion.div>
+  )
 }
+EOF
