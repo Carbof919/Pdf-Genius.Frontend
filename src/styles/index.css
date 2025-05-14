@@ -1,3 +1,16 @@
-echo '@tailwind base;
+cat > src/styles/main.css << 'EOF'
+@tailwind base;
 @tailwind components;
-@tailwind utilities;' > src/styles/index.css
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+EOF
